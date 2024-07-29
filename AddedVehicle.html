@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr" xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="utf-8">
+      <title>Vehicles</title>
+      <link rel="stylesheet" href="">
+      <style type="text/css">
+         @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: #f2f2f2;
+  /* background: linear-gradient(-135deg, #c850c0, #4158d0); */
+}
+::selection{
+  background: #4158d0;
+  color: #fff;
+}
+.wrapper{
+  width: 380px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+}
+.wrapper form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.wrapper form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color: #4158d0;
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: #4158d0;
+  background: #fff;
+  transform: translateY(-50%);
+}
+form .content{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  align-items: center;
+  justify-content: space-around;
+}
+form .content .checkbox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+form .content input{
+  width: 15px;
+  height: 15px;
+  background: red;
+}
+form .content label{
+  color: #262626;
+  user-select: none;
+  padding-left: 5px;
+}
+form .content .pass-link{
+  color: "";
+}
+form .field input[type="submit"]{
+  color: #fff;
+  border: none;
+  padding-left: 0;
+  margin-top: -10px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+form .signup-link{
+  color: #262626;
+  margin-top: 20px;
+  text-align: center;
+}
+form .pass-link a,
+form .signup-link a{
+  color: #4158d0;
+  text-decoration: none;
+}
+form .pass-link a:hover,
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+ .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 90px;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.styled-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #333;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.styled-table tbody td:last-child {
+    border-right: none;
+}
+
+
+
+
+nav{
+ position: relative;
+ left: 0;
+ top: 0;
+ width: 100%;
+ height: 75px;
+ background: #2980b9;
+ box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+nav .navbar{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ height: 100%;
+ max-width: 90%;
+ background: #2980b9;
+ margin: auto;
+ padding-right: 320px;
+}
+nav .navbar .logo a{
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav .navbar .menu{
+  display: flex;
+}
+.navbar .menu li{
+  list-style: none;
+  margin: 0 15px;
+}
+.navbar .menu li a{
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+section{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #96c7e8;
+  font-size: 70px;
+}
+.button-24 {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+ 
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+.button-24:hover,
+.button-24:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+.button-24:active {
+  opacity: .5;
+}
+
+
+.box {
+    width: 230px;
+    height: 120px;
+    margin-right: 2650px;
+    margin-top:40px;
+    background-color: #fff; /* Set your desired background color */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+                rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+                rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  }
+  .box1 {
+    width: 230px;
+    height: 120px;
+    margin-right: 2000px;
+    margin-top:-120px;
+    background-color: #fff; /* Set your desired background color */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+                rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+                rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+                rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
+               
+  }
+  
+ 
+      </style>
+   </head>
+   <body>
+   <nav>
+    <div class="navbar">
+      <div class="logo"><a href="#">Gadi Dheko:-</a></div>
+      <ul class="menu">
+        <li style="margin-right: 1500px";><a href="#Home"><h1>Hello Seller, this is your personal DashBoard</h1></a></li>
+      </ul>
+    </div>
+    <h1 style="color: black; margin-top: 10px; margin-left: 20px;" ><u>Registered Vehicles..</u></h1>
+   
+  </nav>
+  <div id="imageContainer">
+      <table class="styled-table">
+             <thead>
+              <tr>
+                <th class="gloww">Owner Id</th>
+                <th class="gloww">Vehicle_company</th>
+                 <th class="gloww">Description</th>
+                <th class="gloww">Email_id</th>
+                 <th class="gloww">Vehicle_image</th>
+                <th class="gloww">Insurance_certificate</th>
+                 <th class="gloww">Pollution_certificate</th>
+                <th class="gloww">Road_taxReceipt </th>
+                 <th class="gloww">Your_unique_key </th>
+                <th class="gloww">Owner Name</th>
+                
+                <th class="gloww">Ph_No</th>
+                <th class="gloww">Vehicle_colour</th>
+                 <th class="gloww">Model_name </th>
+                <th class="gloww">Vehicle_number</th>
+               
+               <th class="gloww">Selling_Price</th>
+                 <th class="gloww">Vehicle_Type</th>
+                <th class="gloww">Model_year</th>
+                <th class="gloww">Remove_Vehicle Details</th>
+            </tr>
+             </thead>
+             <tbody>
+            <tr th:each="im:${list}">
+             <td th:text="${im.id}"></td>
+              <td th:text="${im.Ocomp}"></td>
+              <td th:text="${im.Odesc}"></td>
+              <td th:text="${im.Oemail}"></td>
+              <td><img alt="" th:src="@{'Vehicleimages/'+${im.Oimage1}}" width="120%" height="110px" id="myImage" style="width: 165px;"></td>
+              <td><img alt="" th:src="@{'Vehicleimages/'+${im.Oimage2}}" width="110%" height="100px" id="myImage1" style="width: 165px;"></td>
+             <td><img alt="" th:src="@{'Vehicleimages/'+${im.Oimage3}}" width="110%" height="100px"  id="myImage2" style="width: 165px;"></td>
+              <td><img alt="" th:src="@{'Vehicleimages/'+${im.Oimage4}}" width="110%" height="100px" id="myImage3" style="width: 165px;"></td>
+              <td th:text="${im.Okey}"></td>
+              <td th:text="${im.Oname}"></td>
+              <td th:text="${im.Ophno}"></td>
+              <td th:text="${im.Ovcol}"></td>
+              <td th:text="${im.Ovmodel}"></td>
+              <td th:text="${im.Ovno}"></td>
+              <td th:text="${im.Ovprice}"></td>
+              <td th:text="${im.Ovtyp}"></td>
+              <td th:text="${im.Ovyear}"></td>
+              <td>
+              <a href="RemoveDetails.html" class="button-24" role="buttom">Remove</a>
+              </td>
+             </tr>
+             </tbody>
+            </table>
+            </div>
+          <script type="text/javascript">
+    // Function to toggle image size
+    function toggleImageSize(event) {
+        var target = event.target;
+        if (target.tagName === 'IMG') {
+            var clickCount = parseInt(target.getAttribute('data-click-count')) || 0;
+            clickCount++;
+            target.setAttribute('data-click-count', clickCount);
+            if (clickCount % 2 === 1) {
+                target.style.width = '400px';
+                target.style.height = '400px';
+            } else {
+                target.style.width = '165px';
+                target.style.height = '120px';
+            }
+        }
+    }
+
+    // Attach event listener to a parent element containing all images
+    document.getElementById('imageContainer').addEventListener('click', toggleImageSize);
+</script>
+     <div class="box">
+     <b style="padding-left: 20px; color: green; margin-bottom: 20px; font-size: 19px;">Total Details Added!</b>
+   <h1><b th:text="${session.TotalCount}" style="font-weight: bold; font-size: 20px; padding-left: 98px;color:Black; margin-top: 1000px; font-size: 30px;"></b></h1>
+     </div>
+     
+      <div class="box1">
+     <b style="padding-left: 20px; color: green; margin-bottom: 20px; font-size: 19px;">See List Of Buyer</b>
+   <h2><a href="State.html" style="text-align: center; color: blue; padding-left: 40px;">Click Here</h2>
+     </div>
+   </body>
+</html>
